@@ -17,6 +17,22 @@ pipeline {
 					}
 				}
 			}
-			
+			stage("Pushing image to dockerhub"){
+			  steps {
+			    script {
+			      sh 'docker push jinal0217/swe645:v1'
+			    }
+			  }
+			}
+			stage("Deploying to Rancher as single pod"){
+			    steps {
+			      sh 'kubectl set image deployment/hw2-pipeline hw2-pipeline=jinal0217/swe645:v1 -n jenkins-pipeline'
+			    }
+			}
+			stage("Deploying to Rancher as with load balancer"){
+			    steps {
+			      sh 'kubectl set image deployment/hw2-webapp-lb hw2-webapp-lb=jinal0217/swe645:v1 -n jenkins-pipeline'
+			    }
+			}
 	}
 }
