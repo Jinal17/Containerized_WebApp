@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head Section -->
+<head>
+<!--Linking External Style Sheets-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="images/gmu-favicon.jpg">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/surveycss.css">
+    <link rel="stylesheet" href="css/mainpopup.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <title>Student Survey</title>
+</head>
+
+<!--Body Section -->
+<body>
+  <!--Top Navigation menubar -->
+  <nav>
+      <ul class="menubar">
+          <li class="menu"><a href="http://swe645-jinal.s3-website-us-east-1.amazonaws.com/"><strong>HOME</strong></a></li>
+          <li class="menu"><a href="info.html"><strong>INFO</strong></a></li>
+          <li class="menu"><a href="survey.html"><strong>SURVEY</strong></a></li>
+          <li class="menu"><a href="http://swe645-jinal.s3-website-us-east-1.amazonaws.com/"><strong>CONTACT</strong></a></li>
+      </ul>
+  </nav>
+  <!-- Title Strip : Design Layout -->
+  <section class="titleStripSurvey"></section>
+
+  <!-- General Information Heading Section-->
+  <section class="headingbar">
+      <div class="w3-container">
+          <div class="left-col">
+              <div class="course-requirement">
+              </div>
+          </div>
+      </div>
+  </section>
+
+<!-- Student Survey Form Field : Starts -->
+  <div id="outside">
+      <form id="survey-form" onclick="" action="" method="post" autocomplete="on">
+          <br>
+          <h1 id="title" class="rec-box">Student Survey</h1>
+          <br>
+          <p id="description">Please provide us with your feedback about your recent campus visit</p>
+
+          <fieldset>
+              <!--Student's Personal Details-->
+              <legend>Personal Details</legend>
+              <div>
+                  <label class="required" id="name-label" for="name">Name:</label>
+                  <input type="text" required id="name" name="user_name" placeholder="Enter name here" required autofocus>
+              </div>
+              <!--  Street, City -->
+              <div>
+                  <label for="address-label">Address:</label>
+                  <input type="Address" id="address" name="Address" placeholder="542 W. 15th Street">
+                  <label for="city">City:</label>
+                  <input type="text" id="city" name="city" placeholder="New York">
+              </div>
+              <!--  State, ZIP   -->
+              <div>
+                  <label for="state">State:</label>
+                  <input type="text" id="state" name="state" placeholder="NY">
+
+                  <label for="zip">Zip:</label>
+                  <input type="text" id="zip" name="zip" placeholder="10001">
+              </div>
+              <!-- Input : Email, Phone#, Url  -->
+              <div>
+                  <label class="required" id="email-label" for="Email">Email:</label>
+                  <input type="email" required id="email" name="user_email" placeholder="abc@gmail.com" required>  
+              </div>
+              <div>
+                  <label id="number-label" for="phone">Phone #:</label>
+                  <input type="tel" id="number" name="user_name" placeholder="123-456-7890" min="1" max="9"> 
+              </div>
+              <div>
+                  <label id="website" for="website">Website:</label>
+                  <input type="text" id="website" name="website" placeholder="Enter url here">  
+              </div>
+
+              <!-- Date Selection -->
+              <p class="required"> Expected High School Graduation Date :</p>
+              <label for="browser"><i>Month:</i></label>
+              <input list="browsers" name="browser" id="browser" required>
+              <datalist id="browsers">
+                  <option value="January">
+                  <option value="February">
+                  <option value="March">
+                  <option value="April">
+                  <option value="May">
+                  <option value="June">
+                  <option value="July">
+                  <option value="August">
+                  <option value="September">
+                  <option value="October">
+                  <option value="November">
+                  <option value="December">
+              </datalist>
+              <!--Graduation Year-->
+              <label id="name-label" for="year" required><i>Year:</i></label>
+              <input type="text" required id="gradyear" name="year" placeholder="2021">
+              <br>
+              <br>
+              <!-- Date Label Calendar drop down: Campus Visit Date -->
+              <label class="required" for="date-label" required>Date of Campus Visit:</label>
+              <input type="date" name="visit_date">
+          </fieldset>
+
+          <!--Checkboxes, Radio Button Fields : Takes Student's Opinion about the University-->
+          <fieldset>
+              <legend>Opinion</legend>
+              <label for="campus"><p>What you liked most about the campus. <br><i style="font-size:13px">Check All That
+                  Apply</i></p></label>
+              <div class="checkbox">
+                <p>
+                  <input type="checkbox" name="student" value="student"> Students<br>
+                  <input type="checkbox" name="location" value="location"> Location<br>
+                  <input type="checkbox" name="campus" value="campus"> Campus<br>
+                  <input type="checkbox" name="atmosphere" value="atmosphere"> Atmosphere<br>
+                  <input type="checkbox" name="dormroom" value="dormroom"> Dorm Rooms<br>
+                  <input type="checkbox" name="sports" value="sports"> Sports<br>
+                </p>
+              </div>
+              <!---Radio Buttons-->
+              <div>
+                  <label class="required" for="gettoknow" required>How did you get to know about the university.</label>
+                  <p>
+                      <input type="radio" id="friends" name="know" value="friends">
+                      <label for="friends">Friends</label><br>
+
+                      <input type="radio" id="television" name="know" value="television">
+                      <label for="television">Television</label><br>
+
+                      <input type="radio" id="internet" name="know" value="internet">
+                      <label for="internet">Internet</label><br>
+
+                      <input type="radio" id="other" name="know" value="other">
+                      <label for="other">Other</label><br>
+                  </p>
+              </div>
+
+              <!-- Dropdown menu-->
+              <div>
+                  <label for="politics">How likely would you recommend the university to prospective students</label>
+                  <select id="dropdown">
+                      <option value="left">Very Likely</option>
+                      <option value="right">Likely</option>
+                      <option value="conservative">Unlikely</option>
+                  </select>
+                  <p></p>
+              </div>
+          </fieldset>
+
+          <!-- Additional Comments : Text Field -->
+          <fieldset>
+      <legend>Additional Comments </legend>
+      <div>
+        <label for="msg"></label>
+        <p> In 50 words or more let us know how better we can assist you</p>
+        <textarea id="msg" name="user_message" rows="4" cols="50" placeholder="Enter Text Here"></textarea></div>
+    </fieldset>
+
+          <!-- Raffle : Movie Ticket Winner -->
+          <fieldset>
+              <legend>Win Movie Ticket!</legend>
+              <div id="errorMessage"></div>
+              <p> Enter 10 comma separated numbers in the text area &see if you can win a free Movie Ticket </p>
+              <textarea id="numbers" rows="4" cols="50" placeholder="Enter 10 comma separated numbers here..."></textarea>
+              <p></p>
+              <p></p>
+              <div class="vertical-center">
+                  <button class
+                  "btn_align" onclick="draw();" type="button" name="button" style="background-color:#FFCC33;
+                  color:#006633"> Click here to Win!
+                  </button>
+              </div>
+          </fieldset>
+
+          <!-- Form Submit-->
+          <p class="requiredbefore"><i style="font-size:11px">Fields must be completed to submit the survey</i></p>
+          <div id="submitbutton">
+              <button type="submit" action="" id="submit">Submit</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button type="submit" action="" id="cancel-btn">Cancel</button>  
+          </div>
+      </form>
+  </div>
+<!-- Student Survey Form Field : Ends -->
+
+<!-- Javascript : For Raffle field on the survey page -->
+  <script>
+
+    // Function : Resets the text area of the Raffle after an in valid input
+    function clearText() {
+    // set text box reference
+    var tb = document.getElementById('numbers');
+    // clear text box
+    tb.value = '';
+    }
+
+    // Validation checks for the input fields of the Raffle : Movie Ticket Winner
+    function draw(){
+      const numbers = document.getElementById("numbers").value.split(",");
+      var numArray= [];
+      var length = numbers.length;
+      // Checks if user enters less then 10 entries for the draw
+      if (length < 10){
+        alert("Enter atleast 10 comma separated numbers");
+        clearText();
+        return;
+      }
+      var i;
+      for (i = 0; i < length; i++){
+        if (isNaN(numbers[i])){
+          alert("Please enter a valid number");
+          clearText();
+          return;
+        }
+        // Checks if the user enters numbers less then 1 or greater then 100
+        if (numbers[i] > 100 || numbers[i] < 1){
+          alert("Please enter a valid number between 1 to 100");
+          clearText();
+          return;
+        }
+      }
+      // Generates a random lucky number for the winner
+      var random = Math.floor(Math.random() * 99) + 1;
+      alert("Lucky Number is  " + random);
+      for (i = 0; i < length; i++){
+        if (numbers[i] == random){
+          alert("Yaay!! You won a movie ticket");
+          clearText();
+          return;
+        }
+      }
+      alert("Better luck next time");
+      }
+    </script>
+</body>
+
+<!-- Web Page Footer Specification -->
+<footer class="bottomfooter">
+    <a href="https://www2.gmu.edu/"><img class="resize" style="float:right" src="images/gmu_logo_footer.jpg" alt=""></a>
+    <div class="line">
+        <hr>
+        <!-- University Description : Link to the University Home Page -->
+        <div class="footer-about">
+            <h4 style="color:#006633;">About</h4>
+            <p class="text-justify">George Mason University is a public, comprehensive, research university established
+                by the Commonwealth of Virginia in the National Capital Region. We are an innovative and inclusive
+                academic community committed to creating a more just, free, and prosperous world.</p>
+        </div>
+    </div>
+</footer>
+
+</html>

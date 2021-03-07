@@ -1,0 +1,107 @@
+
+/* Styling of the Suvery Form */
+
+.titleStripSurvey{
+background-image: url(../images/top_img_feedback.jpg);
+padding: 20vh 0;
+background-size: cover;
+}
+
+body {
+font-family: 'Anaheim';
+font-size: 1.2em;
+}
+
+#outside {
+background-color: #e1e8e3;
+padding-top: 25px;
+padding-bottom: 25px;
+}
+
+h1 {
+font-size: 1.5em;
+text-align: center;
+text-transform: capitalize;
+}
+
+form {
+margin: 0 auto;
+width: 70%;
+padding: 1em;
+border: 1px solid #CCC;
+border-radius: 1em;
+}
+
+#survey-form {
+background-color: #f6f7f2;
+}
+
+fieldset {
+border:1px solid lightgray;
+margin: 10px;
+}
+
+legend {
+font-weight: 700;
+}
+
+#number {
+width: 150px;
+}
+
+div + div {
+margin-top: 1em;
+}
+}
+input, textarea {
+width: 200px;
+border: 1px solid #999;
+}
+
+input:focus, textarea:focus {
+border-color: OrangeRed;
+}
+
+textarea {
+vertical-align: top;
+height: 5em;
+resize: vertical;
+}
+
+.button {
+padding-left: 90px;
+}
+
+button {
+margin: .5em;
+font-size: 1em;
+text-transform: capitalize;
+background-color: #006633;
+color: white;
+border: none;
+padding: 5px;
+border-radius: 4px;
+}
+
+#submitbutton {
+display: flex;
+justify-content: center;
+}
+
+.required:after {
+content:" *";
+color: red;
+}
+
+.requiredbefore:before {
+content:" *";
+color: red;
+}
+
+button:hover{
+  background: #FFCC33;
+}
+
+#cancel-btn{
+  justify-content:right;
+}
