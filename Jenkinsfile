@@ -14,7 +14,7 @@ pipeline {
 						sh 'cp HW1WebApp.war target/HW1WebApp.war'
 						sh 'echo WAR created'
 						sh "docker login -u jinal0217 -p ${DOCKERHUB_PWD}"
-						sh "docker build - < Dockerfile"
+						sh "docker build -t mywebapp ."
 					}
 				}
 			}
