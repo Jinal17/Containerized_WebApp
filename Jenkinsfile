@@ -11,6 +11,8 @@ pipeline {
 						checkout scm
 						sh 'rm -rf *.war'
 						sh 'jar -cvf HW1WebApp.war -C WebContent/ .'
+						sh 'mkdir target'
+						sh 'cp HW1WebApp.war target/HW1WebApp.war'
 						sh 'echo WAR created'
 						sh "docker login -u jinal0217 -p ${DOCKERHUB_PWD}"
 						sh "docker build - < Dockerfile"
