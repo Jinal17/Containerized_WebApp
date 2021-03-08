@@ -13,7 +13,7 @@ pipeline {
 						sh 'jar -cvf HW1WebApp.war -C WebContent/ .'
 						sh 'echo WAR created'
 						sh "docker login -u jinal0217 -p ${DOCKERHUB_PWD}"
-						def customImage = docker.build("jinal0217/swe645:v1")
+						sh "docker build - < Dockerfile"
 					}
 				}
 			}
