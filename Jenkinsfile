@@ -2,10 +2,9 @@ pipeline {
 	agent any
 	environment {
 		DOCKERHUB_PWD = 'kuntesh123'
-
 	}
 	stages {
-		stage("Building HW1 image"){
+		stage("Building web app image"){
 				steps {
 					script {
 						checkout scm
@@ -24,14 +23,12 @@ pipeline {
 			    }
 			  }
 			}
-			stage("Deploying to Rancher as single pod"){
+			stage("Deploying and executing service on K8"){
 			    steps {
-			      sh 'kubectl set image deployment/hw2-pipeline hw2-pipeline=jinal0217/mywebapp:v1 -n jenkins-pipeline'
-			    }
-			}
-			stage("Deploying to Rancher as with load balancer"){
-			    steps {
-			      sh 'kubectl set image deployment/hw2-webapp-lb hw2-webapp-lb=mywebapp:v1 -n jenkins-pipeline'
+			      sh 'kubectl delete namespace hw2'	
+			      sh 'kubectl create namespace hw2'	
+			      sh 'kubectl apply -f deployment.yaml'
+			      sh 'kubectl apply -f service.yaml'
 			    }
 			}
 	}
