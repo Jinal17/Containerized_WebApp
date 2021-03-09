@@ -14,20 +14,20 @@ pipeline {
 						sh 'cp HW1WebApp.war target/HW1WebApp.war'
 						sh 'echo WAR created'
 						sh "docker login -u jinal0217 -p ${DOCKERHUB_PWD}"
-						sh "docker build -t mywebapp ."
+						sh "docker build -t jinal0217/mywebapp:v1 ."
 					}
 				}
 			}
 			stage("Pushing image to dockerhub"){
 			  steps {
 			    script {
-			      sh 'docker push mywebapp:v1'
+			      sh 'docker push jinal0217/mywebapp:v1'
 			    }
 			  }
 			}
 			stage("Deploying to Rancher as single pod"){
 			    steps {
-			      sh 'kubectl set image deployment/hw2-pipeline hw2-pipeline=mywebapp:v1 -n jenkins-pipeline'
+			      sh 'kubectl set image deployment/hw2-pipeline hw2-pipeline=jinal0217/mywebapp:v1 -n jenkins-pipeline'
 			    }
 			}
 			stage("Deploying to Rancher as with load balancer"){
