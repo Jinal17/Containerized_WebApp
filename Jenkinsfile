@@ -23,10 +23,15 @@ pipeline {
 			    }
 			  }
 			}
+			stage("Creating new namespace"){
+			    steps {
+			      sh 'kubectl delete namespace hw2'
+			      sh 'sleep 30'
+			      sh 'kubectl create namespace hw2'
+			    }
+			}
 			stage("Deploying and executing service on K8"){
 			    steps {
-			      sh 'kubectl delete namespace hw2'	
-			      sh 'kubectl create namespace hw2'	
 			      sh 'kubectl apply -f deployment.yaml'
 			      sh 'kubectl apply -f service.yaml'
 			    }

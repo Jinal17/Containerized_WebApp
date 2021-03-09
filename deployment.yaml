@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: swe-645
-        image: public.ecr.aws/h7d6t5w4/swe-645:latest
+        image: jinal0217/mywebapp:v1
         ports:
           - name: web
             containerPort: 8080
