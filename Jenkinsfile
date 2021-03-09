@@ -26,7 +26,7 @@ pipeline {
 			stage("Creating new namespace"){
 			    steps {
 			      sh 'kubectl delete namespace hw2'
-			      sh 'sleep 30'
+			      sh 'sleep 120'
 			      sh 'kubectl create namespace hw2'
 			    }
 			}
