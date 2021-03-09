@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	environment {
-		DOCKER_PWD = credentials('DOCKERHUB_PWD')
+		DOCKER_PWD = 'kuntesh123'
 	}
 	stages {
 		stage("Building web app image"){
@@ -12,7 +12,6 @@ pipeline {
 						sh 'jar -cvf HW1WebApp.war -C WebContent/ .'
 						sh 'echo WAR created'
 						sh 'echo ${DOCKER_PWD}'
-						sh 'echo ${BUILD_TIMESTAMP}'
 						sh "docker login -u jinal0217 -p ${DOCKER_PWD}"
 						sh "docker build -t jinal0217/mywebapp:v1 ."
 					}
