@@ -13,14 +13,14 @@ pipeline {
 						sh 'echo WAR created'
 						sh 'echo ${DOCKER_PWD}'
 						sh "docker login -u jinal0217 -p ${DOCKER_PWD}"
-						sh "docker build -t jinal0217/mywebapp:v2 ."
+						sh "docker build -t jinal0217/mywebapp_new:v2 ."
 					}
 				}
 			}
 			stage("Pushing image to dockerhub"){
 			  steps {
 			    script {
-			      sh 'docker push jinal0217/mywebapp:v2'
+			      sh 'docker push jinal0217/mywebapp_new:v2'
 			    }
 			  }
 			}
