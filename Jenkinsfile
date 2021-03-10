@@ -1,7 +1,7 @@
 pipeline {
 	agent any
 	environment {
-		DOCKER_PWD = 'kuntesh123'
+		DOCKER_PWD = 'swe645_homework'
 	}
 	stages {
 		stage("Building web app image"){
