@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: swe-645
-        image: jinal0217/mywebapp:v2
+        image: jinal0217/mywebapp:v1
         ports:
           - name: web
             containerPort: 8080
