@@ -35,8 +35,7 @@ pipeline {
 // 			}
 			stage("Deploying and executing service on K8"){
 			    steps {
-			      sh 'chmod -x changeTag.sh'
-			      sh './changeTag.sh ${DOCKER_TAG}'
+			      sh 'sed "s/tagVersion/${DOCKER_TAG}/g" deployment.yaml > deployment-app.yaml'
 			      sh 'kubectl apply -f deployment-app.yaml'
 			      sh 'kubectl apply -f service.yaml'
 			    }
