@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: my-app
-          image: jinal0217/mywebapp_new:v6
+          image: jinal0217/mywebapp_new:tagVersion
           imagePullPolicy: Always
           ports:
             - name: web

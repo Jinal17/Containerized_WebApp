@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	environment {
 		DOCKER_PWD = 'swe645_homework'
-		DOCKER_TAG = 'v6'
+		DOCKER_TAG = 'v7'
 	}
 	stages {
 		stage("Building web app image"){
@@ -35,7 +35,9 @@ pipeline {
 // 			}
 			stage("Deploying and executing service on K8"){
 			    steps {
-			      sh 'kubectl apply -f deployment.yaml'
+			      sh 'chmod -x changeTag.sh'
+			      sh './changeTag.sh ${DOCKER_TAG}'
+			      sh 'kubectl apply -f deployment-app.yaml'
 			      sh 'kubectl apply -f service.yaml'
 			    }
 			}
