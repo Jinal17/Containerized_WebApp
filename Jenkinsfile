@@ -2,25 +2,27 @@ pipeline {
 	agent any
 	environment {
 		DOCKER_PWD = 'swe645_homework'
+		DOCKER_TAG = 'v6'
 	}
 	stages {
 		stage("Building web app image"){
 				steps {
 					script {
 						checkout scm
+						sh 'sudo su jenkins'
 						sh 'rm -rf *.war'
 						sh 'jar -cvf HW1WebApp.war -C WebContent/ .'
 						sh 'echo WAR created'
 						sh 'echo ${DOCKER_PWD}'
 						sh "docker login -u jinal0217 -p ${DOCKER_PWD}"
-						sh "docker build -t jinal0217/mywebapp_new:v5 ."
+						sh "docker build -t jinal0217/mywebapp_new:{DOCKER_TAG} ."
 					}
 				}
 			}
 			stage("Pushing image to dockerhub"){
 			  steps {
 			    script {
-			      sh 'docker push jinal0217/mywebapp_new:v5'
+			      sh 'docker push jinal0217/mywebapp_new:{DOCKER_TAG}'
 			    }
 			  }
 			}
