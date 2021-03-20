@@ -14,9 +14,10 @@ spec:
         app: my-app
     spec:
       containers:
-      - name: swe-645
-        image: jinal0217/mywebapp_new:v2
-        ports:
-          - name: web
-            containerPort: 8080
-            protocol: TCP
+        - name: my-app
+          image: jinal0217/mywebapp_new:v5
+          imagePullPolicy: Always
+          ports:
+            - name: web
+              containerPort: 8080
+              protocol: TCP
