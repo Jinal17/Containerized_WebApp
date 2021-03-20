@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	environment {
 		DOCKER_PWD = 'swe645_homework'
-		DOCKER_TAG = 'v8'
+		DOCKER_TAG = 'v9'
 	}
 	stages {
 		stage("Building web app image"){
@@ -26,13 +26,6 @@ pipeline {
 			    }
 			  }
 			}
-// 			stage("Creating new namespace"){
-// 			    steps {
-// 			      sh 'kubectl delete namespace hw2'
-// 			      sh 'sleep 120'
-// 			      sh 'kubectl create namespace hw2'
-// 			    }
-// 			}
 			stage("Deploying and executing service on K8"){
 			    steps {
 			      sh 'sed "s/tagVersion/${DOCKER_TAG}/g" deployment.yaml > deployment-app.yaml'
