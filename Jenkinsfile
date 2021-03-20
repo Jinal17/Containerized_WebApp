@@ -9,7 +9,6 @@ pipeline {
 				steps {
 					script {
 						checkout scm
-						sh 'sudo su jenkins'
 						sh 'rm -rf *.war'
 						sh 'jar -cvf HW1WebApp.war -C WebContent/ .'
 						sh 'echo WAR created'
