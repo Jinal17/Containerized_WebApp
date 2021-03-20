@@ -15,14 +15,14 @@ pipeline {
 						sh 'echo ${DOCKER_PWD}'
 						sh 'echo ${DOCKER_TAG}'
 						sh "docker login -u jinal0217 -p ${DOCKER_PWD}"
-						sh "docker build . -t jinal0217/mywebapp_new:{DOCKER_TAG} "
+						sh "docker build . -t jinal0217/mywebapp_new:${DOCKER_TAG} "
 					}
 				}
 			}
 			stage("Pushing image to dockerhub"){
 			  steps {
 			    script {
-			      sh 'docker push jinal0217/mywebapp_new:{DOCKER_TAG}'
+			      sh 'docker push jinal0217/mywebapp_new:${DOCKER_TAG}'
 			    }
 			  }
 			}
