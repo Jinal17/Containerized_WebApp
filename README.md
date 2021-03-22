@@ -1,35 +1,29 @@
 # SWE 645 : Component based Software development
 
-## Name : Jinalben Shah
-## G01246819
-Assignment I : Part 2
+### Name : Angeela Acharya, Jinalben Shah, Kripa Pokheral, Sujana Khakural
 
-##### Link1 : [Home page hosted on S3](http://swe645-jinal.s3-website-us-east-1.amazonaws.com/)
-##### Link2 : [Info page hosted on EC2](https://ec2-54-89-187-17.compute-1.amazonaws.com/HW1WebApp/info.html)
-##### Link3 : [Survey page hosted on EC2](https://ec2-54-89-187-17.compute-1.amazonaws.com/HW1WebApp/survey.html)
+### Homework 2:
+### WebApp Home page: [here](http://swe645-jinal.s3-website-us-east-1.amazonaws.com/)
+### WebApp Survey page: [here](http://a93a1d16bb4504a03ada735ff2bc4813-400275033.us-east-1.elb.amazonaws.com:8080/HW1WebApp/info.html)
 
-##### HTML and CSS files for the web application are placed under:
-HW1WebApp/WebContent/survey.html <br/>
-HW1WebApp/WebContent/info.html <br/>
-HW1WebApp/WebContent/css/ <br/>
-HW1WebApp/WebContent/images/ <br/>
+#### DOCKER
+Dockerfile contains : Dependencies & Web application related docker definitions
+DockerHub: [here](https://hub.docker.com/repository/docker/jinal0217/mywebapp_new)
 
-## Installation steps:
-##### Login into AWS EC2:
-* ssh -i "swe645_jinal.pem" bitnami@ec2-54-89-187-17.compute-1.amazonaws.com
+#### KUBERNETES
+Deployment & Service Files Contains: container, kubernetes related deployment and execution definitions
 
-##### To see the error/ debug logs:
-* ssh -i "swe645_jinal.pem" bitnami@ec2-54-89-187-17.compute-1.amazonaws.com -vvv
+**Cluster Name**: swe645hw2
 
-##### Upload WAR file from local to EC2:
-* scp -i swe645_jinal.pem HW1WebApp.war bitnami@ec2-54-89-187-17.compute-1.amazonaws.com:/home/bitnami/
+#### Rancher: URL: [here](https://ec2-3-235-177-197.compute-1.amazonaws.com/login) 
 
-##### Execute this from the EC2 instance:
-* sudo cp HW1WebApp.war /opt/bitnami/tomcat/webapps/
- 
-##### Check the UI:
-* https://ec2-54-89-187-17.compute-1.amazonaws.com/HW1WebApp/info.html
+#### Jenkins:URL: [here](http://3.236.78.179:8080/job/swe645/)
 
-##### README.md for part 1 is present under S3 project
+#### Git: URL : [here](https://github.com/Jinal17/swe645)
 
-<img src=ec2.png width="600" height="400">
+## Steps:
+1. Make necessary changes in html and css files
+2. Modify the **DOCKER_TAG** version in Jenkinsfile
+3. Push the changes to Git
+4. Build will get triggered and deploy the web application related changes on kubernetes cluster.
+5. Verify the changes on URL: http://a93a1d16bb4504a03ada735ff2bc4813-400275033.us-east-1.elb.amazonaws.com:8080/HW1WebApp/survey.html
