@@ -21,9 +21,15 @@ Deployment & Service Files Contains: container, kubernetes related deployment an
 
 #### Git: URL : [here](https://github.com/Jinal17/swe645)
 
-## Steps:
-1. Make necessary changes in html and css files
-2. Modify the **DOCKER_TAG** version in Jenkinsfile
-3. Push the changes to Git
-4. Build will get triggered and deploy the web application related changes on kubernetes cluster.
-5. Verify the changes on URL: http://a93a1d16bb4504a03ada735ff2bc4813-400275033.us-east-1.elb.amazonaws.com:8080/HW1WebApp/survey.html
+ 
+## Steps for Triggering the Build through Jenkins:
+
+- **First Time User** Clone this Repo using: git clone https://github.com/Jinal17/swe645
+- Make necessary changes in html and css files for the Web App on your local system
+- Modify the **DOCKER_TAG** version in Jenkinsfile. For example: Modify the **DOCKER_TAG** = ‘V8’ : to V9 (any version)
+- $git status
+- $git add -–all
+- $git commit -m "Pushing Final Changes"
+- $git push
+- Once the above steps are executed successfully, the Jenkins build will get triggered and the web application with the new changes will get deployed on kubernetes cluster.
+- Verify the changes on URL: [here](http://a93a1d16bb4504a03ada735ff2bc4813-400275033.us-east-1.elb.amazonaws.com:8080/HW1WebApp/survey.html)

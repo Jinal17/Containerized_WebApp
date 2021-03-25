@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	environment {
 		DOCKER_PWD = 'swe645_homework'
-		DOCKER_TAG = 'v10'
+		DOCKER_TAG = 'v11'
 	}
 	stages {
 		stage("Building web app image"){
